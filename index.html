@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Rock paper and scissors</title>
+  </head>
+  <body>
+    <section class="game">
+      <div id="sawo-container" style="height: 300px; width: 300px;">
+      </div>
+      <div class="score">
+        <div class="player-score">
+          <h2>Player</h2>
+          <p>0</p>
+        </div>
+        <div class="computer-score">
+          <h2>Computer</h2>
+          <p>0</p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h1>Rock Paper and Scissors</h1>
+        <button>Let's Play</button>
+      </div>
+
+      <div class="match fadeOut">
+        <h2 class="winner">Choose an option</h2>
+        <div class="hands">
+          <img class="player-hand" src="E:\WhatsApp Image 2021-10-01 at 14.34.53 (1).jpeg" alt="" />
+          <img class="computer-hand" src="E:\WhatsApp Image 2021-10-01 at 14.34.53 (1).jpeg" alt="" />
+        </div>
+        <div class="options">
+          <button class="rock">rock</button>
+          <button class="paper">paper</button>
+          <button class="scissors">scissors</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>    
+<script>
+    var config = {
+        // should be same as the id of the container created on 3rd step
+        containerID: "sawo-container",
+        // can be one of 'email' or 'phone_number_sms'
+        identifierType: "phone_number_sms",
+        // Add the API key copied from 2nd step
+        apiKey: "4c96a9a9-1a13-4135-ac06-c88595deabc6",
+        // Add a callback here to handle the payload sent by sdk
+        onSuccess: (payload) => {
+            console.log(payload)
+        },
+    };
+    var sawo = new Sawo(config);
+    sawo.showForm();
+</script>
+  </body>
+</html>
